@@ -4,8 +4,10 @@
 
 @extends('layouts.front.app')
 @section('css')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 @endsection
+
 @section('title', __('FAQs'))
 
 {{-- <section id="faq" class="section border-0 m-5 p-5">
@@ -51,56 +53,37 @@
     </div>
 </section> --}}
 
-<section id="faq" class="section border-0 m-5 p-5">
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne">
-                    Accordion Item #1
-                </button>
-            </h2>
-            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
+<section id="faq" class="section border-0 d-flex fa-border-none m-5 p-5">
+    <main class="container-fluid justify-content-center m-5 p-5">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            @foreach ($faqs as $key => $item)
+                <div class="accordion-item" style="background: black">
+                    <h2 class="accordion-header w-100" id="heading{{ $key }}">
+                        <button style="width: 100% !important"
+                            class="accordion-button{{ $loop->first ? '' : ' collapsed' }} text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse{{ $key }}"
+                            aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                            aria-controls="collapse{{ $key }}">
+                            {{ $item['questions'] }}
+                        </button>
+
+                    </h2>
+                    <div id="collapse{{ $key }}"
+                        class="accordion-collapse collapse{{ $loop->first ? ' show' : '' }}"
+                        aria-labelledby="heading{{ $key }}" data-bs-parent="#accordionPanelsStayOpenExample">
+                        <div class="accordion-body text-white">
+                            {{ $item['answer'] }}
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <hr>
+            @endforeach
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo">
-                    Accordion Item #2
-                </button>
-            </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
-                    overflow.
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree">
-                    Accordion Item #3
-                </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                    overflow.
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 </section>
 
-
 @section('js')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 @endsection

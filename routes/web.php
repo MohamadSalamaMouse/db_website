@@ -31,7 +31,6 @@ use App\Http\Controllers\Back\LandingPageController;
 use App\Http\Controllers\Front\Home_frontController;
 use App\Http\Controllers\Front\Blog_frontController;
 use App\Http\Controllers\Front\Project_frontController;
-use App\Http\Controllers\Front\Faqs_frontController;
 use App\Http\Controllers\Front\Pages_frontController;
 use App\Http\Controllers\Front\Contact_frontController as frontContact;
 use App\Http\Controllers\Front\Gallery_frontController;

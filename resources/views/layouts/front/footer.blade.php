@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer vh-100 min-vh-100">
     <div class="container">
         <div class="footer-links p-relative">
             <div class="row">
@@ -8,7 +8,7 @@
                     <div class="footer-block">
                         <div class="footer-logo">
                             <a href="/" title="{{ config('app.name') }}"><img style="height: 37px;"
-                                    src="{{ Storage::url(setting('app_logo')) ? Storage::url('app-logo/app-logo.png') : asset('assets/images/app-logo.png') }}"
+                                    src="{{ asset('storage/app/app-logo/app-logo.png') }}"
                                     alt="{{ config('app.name') }}"></a>
                         </div>
 

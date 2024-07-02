@@ -28,7 +28,7 @@
                 <div class="inner-img" data-dsn-grid="move-up" data-overlay="9">
                     @if (isset($cover_ad))
                         <a href="/projects?category=2" style="z-index: 1;position: relative;">
-                            <img class="has-top-bottom" src="{{ Storage::url($cover_ad->cover) }}" alt="">
+                            <img class="has-top-bottom" src="{{ asset('storage/app/' . $cover_ad->cover) }}" alt="">
                         </a>
                     @else
                     <a href="/projects?category=2" style="z-index: 1;position: relative;">

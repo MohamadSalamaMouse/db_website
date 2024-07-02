@@ -49,12 +49,12 @@ return [
             'url' => env('APP_URL') . '/storage/app',
             'permissions' => [
                 'file' => [
-                    'public' => 0777,
-                    'private' => 0777,
+                    'public' => 644,
+                    'private' => 644,
                 ],
                 'dir' => [
-                    'public' => 0777,
-                    'private' => 0777,
+                    'public' => 755,
+                    'private' => 755,
                 ],
             ],
 
@@ -63,7 +63,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL') . '/storage/app',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
 

@@ -1,9 +1,13 @@
 <?php
+
 namespace App\Http\Controllers\Front;
+
 use App\Http\Controllers\Controller;
 use App\Facades\UtilityFacades;
 use App\Models\Faq;
-class Faqs_frontController extends Controller
+
+
+class FaqController extends Controller
 {
     public function index()
     {

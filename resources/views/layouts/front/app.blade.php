@@ -2,5 +2,6 @@
 @include('layouts.front.header')
 @yield('content')
 @include('layouts.front.footer')
+ @yield('js')
 </body>
 </html>

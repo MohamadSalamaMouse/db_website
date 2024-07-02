@@ -15,6 +15,7 @@ use App\Http\Controllers\Back\PagesController;
 use App\Http\Controllers\Back\HomeController;
 use App\Http\Controllers\Back\MenuController;
 use App\Http\Controllers\Front\JoinController;
+use App\Http\Controllers\Front\Testimonial_frontController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\Back\RoleController;
 use App\Http\Controllers\Back\LanguageController;
@@ -351,6 +352,7 @@ Route::group(['middleware' => ['Setting', 'xss', 'Upload']], function () {
     Route::get('blog', [Blog_frontController::class, 'index'])->name('see.all.blogs');
     Route::get('blog/{slug}', [Blog_frontController::class, 'view'])->name('view.blog');
     Route::get('faqs', [Faqs_frontController::class, 'index'])->name('faqs');
+    Route::get('testimonials ', [Testimonial_frontController::class, 'index'])->name('testimonials ');
     Route::get('gallery', [Gallery_frontController::class, 'index'])->name('gallery');
     Route::get('gallery/{id}', [Gallery_frontController::class, 'view'])->name('view.gallery');
     Route::get('contact', [frontContact::class, 'index'])->name('contact');

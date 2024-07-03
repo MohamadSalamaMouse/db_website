@@ -136,8 +136,8 @@
 
 
 
-                                    <div style="color:#000;">
-                                        <button>Send Message</button>
+                                    <div style="color:white">
+                                        <button class="text-white">Send Message</button>
                                         <div class=""></div>
                                     </div>
                                 </div>

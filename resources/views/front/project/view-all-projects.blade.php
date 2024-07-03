@@ -1,8 +1,8 @@
 @php
     $languages = \App\Facades\UtilityFacades::languages();
     $lastProjectUser = App\Models\User::find($lastProject?->created_by);
-    $category_selected = request()->category ?? "all";
-    
+    $category_selected = request()->category ?? 'all';
+
 @endphp
 @extends('layouts.front.app')
 @section('title', Utility::getsettings('project_name'))
@@ -21,28 +21,28 @@
 @endsection
 @section('content')
 
-<div class="box-seat box-seat-full section-margin">
-    <div class="container-fluid">
-        <header>
-            <div class="container header-hero">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="contenet-hero">
-                            <h5></h5>
-                            <h1>Our Work</h1>
+    <div class="box-seat box-seat-full section-margin">
+        <div class="container-fluid">
+            <header>
+                <div class="container header-hero">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="contenet-hero">
+                                <h5></h5>
+                                <h1>Our Work</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        <div class="wrapper">
-            <div class="root-work">
-                <div class="container">
-                    <div class="box-title" data-dsn-title="cover">
-                        <h2 class="title-cover" data-dsn-grid="move-section" data-dsn-move="-70">Projets</h2>
-                    </div>
-                    {{-- <div class="cursor" style="top: 482px; left: 329px;">
+            <div class="wrapper">
+                <div class="root-work">
+                    <div class="container">
+                        <div class="box-title" data-dsn-title="cover">
+                            <h2 class="title-cover" data-dsn-grid="move-section" data-dsn-move="-70">Projets</h2>
+                        </div>
+                        {{-- <div class="cursor" style="top: 482px; left: 329px;">
 
                         <div class="cursor-helper cursor-view">
                             <span>VIEW</span>
@@ -54,61 +54,62 @@
                 
                         <div class="cursor-helper cursor-link"></div>
                     </div> --}}
-                    <div class="filterings">
-                        <div class="filtering-wrap">
-                            <div class="filtering">
-                                <div class="selector"></div>
-                                <button type="button" data-filter="*" class="@if ($category_selected == 'all')
-                                    active
-                                @endif">
-                                    All
-                                </button>
-                                @foreach ($categories as $category)
-                                <button id="category_btn{{$category->id}}" class="@if ($category_selected == $category->id || $category_selected == $category->id) active @endif"
-                                        type="button" data-filter=".category{{$category->id}}">
-                                    {{$category->name}}
-                                </button>
-                            @endforeach
-                            
-                                
+                        <div class="filterings">
+                            <div class="filtering-wrap">
+                                <div class="filtering">
+                                    <div class="selector"></div>
+                                    <button type="button" data-filter="*"
+                                        class="@if ($category_selected == 'all') active @endif">
+                                        All
+                                    </button>
+                                    @foreach ($categories as $category)
+                                        <button id="category_btn{{ $category->id }}"
+                                            class="@if ($category_selected == $category->id || $category_selected == $category->id) active @endif" type="button"
+                                            data-filter=".category{{ $category->id }}">
+                                            {{ $category->name }}
+                                        </button>
+                                    @endforeach
 
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="projects-list gallery">
-                        @foreach ($allProjects as $project)
-                        <div class="item category{{$project->category->id}}">
-                            <a href='{{ route('view.project', ['slug'=>$project->id]) }}'>
-                               <div class="image-container">
-                                    <img class="lazyload has-top-bottom" src="{{Storage::url($project->cover)}}" data-src="{{Storage::url($project->cover)}}" alt="Image" >
-                                {{-- <img class="" src="{{Storage::url($project->cover)}}" alt="" /> --}}
-                                <div class="overLay">
-                                    <div class="item-info">
-                                        <h5 class="cat">{{$project->category->name}}</h5>
-                                        <h4>{{$project->title}}</h4>
-                                        <span><span>Veiw Project</span></span>
-                                    </div>
+
                                 </div>
-                            
                             </div>
-                                {{-- <div class="item-border"></div> --}}
-                      
-                            </a>
                         </div>
 
-                        @endforeach
-                    
-              
+                        <div class="projects-list gallery">
+                            @foreach ($allProjects as $project)
+                                <div class="item category{{ $project->category->id }}">
+                                    <a href='{{ route('view.project', ['slug' => $project->id]) }}'>
+                                        <div class="image-container">
+                                            <img class="has-top-bottom"
+                                                src="{{ asset('storage/app/' . $project->cover) }}"
+                                                alt="Image">
+                                            {{-- <img class="" src="{{Storage::url($project->cover)}}" alt="" /> --}}
+                                            <div class="overLay">
+                                                <div class="item-info">
+                                                    <h5 class="cat">{{ $project->category->name }}</h5>
+                                                    <h4>{{ $project->title }}</h4>
+                                                    <span><span>View Project</span></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        {{-- <div class="item-border"></div> --}}
+
+                                    </a>
+                                </div>
+                            @endforeach
+
+
+                        </div>
                     </div>
                 </div>
+
+
+
             </div>
-
-      
-
         </div>
     </div>
-</div>
     {{-- <div role="main" class="main">
         <section class="section section-with-shape-divider page-header page-header-modern page-header-lg border-0 my-0 lazyloaded"
                  data-bg-src="{{ Utility::getsettings('background_image') ? Storage::url(Utility::getsettings('background_image')) : asset('assets/front/img/business-consulting-3/backgrounds/background-5.jpg') }}"
@@ -138,7 +139,7 @@
                 <div class=" row-gutter-sm justify-content-center mb-4 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000" style="animation-delay: 1000ms;">
                     <div class="row">
                     @if (isset($allProjects))
-                        @foreach ($allProjects as $key=>$record)
+                        @foreach ($allProjects as $key => $record)
                             <div class="col-sm-12 col-md-6 col-lg-6 mb-4">
                                 <a href="{{ route('view.project', $record->slug) }}" class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
                                     <div class="card border-0 box-shadow-4 h-100">
@@ -172,7 +173,7 @@
             </div>
         </section>
     </div> --}}
-    {{-- @if($category_selected != 'all')
+    {{-- @if ($category_selected != 'all')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Simulate click on the filter button with id "category_btn{{$category_selected}}"
@@ -184,7 +185,6 @@
     </script>
     @endif --}}
 @endsection
-@section("scripts")
-<script src="{{asset('assets/front/js/lazyload.js')}}" defer></script>
+@section('scripts')
+    <script src="{{ asset('assets/front/js/lazyload.js') }}" defer></script>
 @endsection
-

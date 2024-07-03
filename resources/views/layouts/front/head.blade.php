@@ -24,9 +24,7 @@
     <!-- custom styles (optional) -->
     <link href="{{ asset('assets/front/css/plugins.css') }}?v=<?=time()?>" rel="stylesheet">
     <link href="{{ asset('assets/front/css/style2.css') }}?v=<?=time()?>" rel="stylesheet">
+    @yield('css')
 </head>
 
 <body class="hamburger-menu dsn-effect-scroll dsn-ajax" data-dsn-mousemove="true">
-
-
-  

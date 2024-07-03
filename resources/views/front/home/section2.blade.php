@@ -5,8 +5,8 @@
             {{-- <div class="inner-img" data-dsn-grid="move-up"> --}}
             @if (isset($cover_project))
             <a href="/projects?category=1">
-                <img data-dsn-scale="1" data-dsn-y="30%" src="{{ Storage::url($cover_project->cover) }}"
-                        alt=""></a>
+                <img data-dsn-scale="1" data-dsn-y="30%" src="{{ asset('storage/app/' . $cover_project->cover) }}"
+                        alt="Image"></a>
             @else
                 <a href="/projects?category=1">
                     <img data-dsn-scale="1" data-dsn-y="30%"

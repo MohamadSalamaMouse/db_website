@@ -1,3 +1,16 @@
+@php
+    $languages = \App\Facades\UtilityFacades::languages();
+@endphp
+
+@extends('layouts.front.app')
+@section('css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+@endsection
+
+@section('title', __('Testimonials'))
+
+
 {{-- <section class="client-see section-margin">
     <div class="container">
         <div class="inner">
@@ -33,3 +46,5 @@
         </div>
     </div>
 </section> --}}
+
+

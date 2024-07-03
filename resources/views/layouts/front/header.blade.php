@@ -1,4 +1,3 @@
-
 <div class="preloader">
     <div class="preloader-after"></div>
     <div class="preloader-before"></div>
@@ -19,8 +18,10 @@
             <div class="inner-header">
                 <div class="main-logo">
                     <a href="{{ route('homepage') }}" title="{{ config('app.name') }}">
-                        <img class="dark-logo" src="{{ Storage::url(setting('app_dark_logo')) ? Storage::url('app-logo/app-dark-logo.png') : asset('assets/images/app-dark-logo.png') }}" alt="">
-                        <img class="light-logo" src="{{ Storage::url(setting('app_dark_logo')) ? Storage::url('app-logo/app-dark-logo.png') : asset('assets/images/app-dark-logo.png') }}" alt="">
+                        <img class="dark-logo"
+                            src="{{ Storage::url(setting('app_dark_logo')) ? Storage::url('app-logo/app-dark-logo.png') : asset('assets/images/app-dark-logo.png') }}"
+                            alt="">
+                        <img class="light-logo" src="{{ asset('assets/images/app-dark-logo.png') }}" alt="logo">
                     </a>
                 </div>
             </div>
@@ -30,29 +31,35 @@
 
                     @php
                         $MainMenus = \App\Models\MenuSetting::where('parent_id', 0)->get();
-                        foreach ($MainMenus as $key=>$record){
-                            $MainMenus[$key]['SubMenus'] = \App\Models\MenuSetting::where('parent_id', '=', $record['id'])->get();
+                        foreach ($MainMenus as $key => $record) {
+                            $MainMenus[$key]['SubMenus'] = \App\Models\MenuSetting::where(
+                                'parent_id',
+                                '=',
+                                $record['id'],
+                            )->get();
                         }
                     @endphp
                     @if (!empty($MainMenus))
                         @foreach ($MainMenus as $record)
-                            @if(count($record['SubMenus']) > 0)
+                            @if (count($record['SubMenus']) > 0)
                                 <li class="custom-drop-down">
-                                    <a href="#" title="{{$record['title']}}">{{$record['title']}}</a>
+                                    <a href="#" title="{{ $record['title'] }}">{{ $record['title'] }}</a>
                                     <ul>
-                                        @foreach ($record['SubMenus'] as $k=>$r)
+                                        @foreach ($record['SubMenus'] as $k => $r)
                                             <li>
-                                                <a href="{{$r['slug']}}" title="{{$r['title']}}">{{$r['title']}}</a>
+                                                <a href="{{ $r['slug'] }}"
+                                                    title="{{ $r['title'] }}">{{ $r['title'] }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
                                 </li>
                             @else
-                            @if ($record["title"] == "News")
-                                @continue
-                            @endif
+                                @if ($record['title'] == 'News')
+                                    @continue
+                                @endif
                                 <li>
-                                    <a href="{{$record['slug']}}" title="{{$record['title']}}">{{$record['title']}}</a>
+                                    <a href="{{ $record['slug'] }}"
+                                        title="{{ $record['title'] }}">{{ $record['title'] }}</a>
                                 </li>
                             @endif
                         @endforeach
@@ -69,8 +76,8 @@
         <div class="header-container">
             <div class="logo main-logo">
                 <a href="{{ route('homepage') }}">
-                    <img class="dark-logo" src="{{ Storage::url(setting('app_dark_logo')) ? Storage::url('app-logo/app-dark-logo.png') : asset('assets/images/app-dark-logo.png') }}" alt="">
-                    <img class="light-logo" src="{{ Storage::url(setting('app_dark_logo')) ? Storage::url('app-logo/app-dark-logo.png') : asset('assets/images/app-dark-logo.png') }}" alt="">
+                    <img class="dark-logo" src="{{ asset('assets/images/app-dark-logo.png') }}" alt="logo">
+                    <img class="light-logo" src="{{ asset('assets/images/app-dark-logo.png') }}" alt="logo">
                 </a>
             </div>
 
@@ -99,9 +106,9 @@
             <div class="nav-content">
                 <div class="inner-content">
                     <address class="v-middle">
-                        <span>{{Utility::getsettings('contact_email')}}</span>
-                        <span>{{Utility::getsettings('contact_phone1')}}</span>
-                        <span>{{Utility::getsettings('contact_address')}}</span>
+                        <span>{{ Utility::getsettings('contact_email') }}</span>
+                        <span>{{ Utility::getsettings('contact_phone1') }}</span>
+                        <span>{{ Utility::getsettings('contact_address') }}</span>
 
                     </address>
                 </div>

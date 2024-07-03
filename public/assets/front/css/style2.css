@@ -1266,8 +1266,11 @@ template {
     width: 10px;
     height: 10px;
 } */
-
-#testimonials .container .button, button:not([data-filter]):not(.mfp-arrow), input[type="button"], input[type="reset"], input[type="submit"] {
+#testimonials .button,
+ #testimonials button:not([data-filter]):not(.mfp-arrow),
+ #testimonials input[type="button"], 
+ #testimonials input[type="reset"],
+ #testimonials input[type="submit"] {
     position: relative;
     width: auto;
     color: #fff;
@@ -2879,15 +2882,15 @@ input[type="search"]::-webkit-search-decoration {
     display: none;
 }
 
-.button,
-button:not([data-filter]):not(.mfp-arrow),
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+#faq .button,
+#faq button:not([data-filter]):not(.mfp-arrow),
+#faq input[type="button"],
+#faq input[type="reset"],
+#faq input[type="submit"] {
     position: relative;
     width: auto;
     color: #fff;
-    /* background-color: #090909; */
+    background-color: #090909;
     -moz-appearance: none;
     border: none;
     -webkit-appearance: none;

@@ -4368,6 +4368,8 @@ body.nav-active
         padding-left: 0;
         padding-bottom: 10px;
         text-align: center;
+        text-decoration: none !important;
+        color: white !important;
     }
 }
 
@@ -4475,6 +4477,8 @@ body.nav-active
     position: relative;
     display: block;
     padding-left: 20%;
+    color: white;
+    text-decoration: none;
     -webkit-transition-delay: 0.8s;
     -o-transition-delay: 0.8s;
     transition-delay: 0.8s;
@@ -4661,6 +4665,8 @@ body.nav-active .nav__content {
 
 body.nav-active .nav__list-item {
     margin-bottom: 15px;
+    color: white;
+    text-decoration: none;
 }
 
 body.nav-active .nav__list-item:nth-child(0) a {

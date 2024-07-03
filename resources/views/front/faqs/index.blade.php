@@ -53,7 +53,7 @@
     </div>
 </section> --}}
 
-<section id="faq" class="section border-0 d-flex fa-border-none m-5 p-5">
+<section id="faq" class="section border-0 d-flex min-vh-100 fa-border-none m-5 p-5">
     <main class="container-fluid justify-content-center m-5 p-5">
         <div class="accordion" id="accordionPanelsStayOpenExample">
             @foreach ($faqs as $key => $item)
@@ -64,7 +64,7 @@
                             data-bs-toggle="collapse" data-bs-target="#collapse{{ $key }}"
                             aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
                             aria-controls="collapse{{ $key }}">
-                            {{ $item['questions'] }}
+                            {{ $loop->iteration }} . {{ $item['questions'] }}
                         </button>
 
                     </h2>

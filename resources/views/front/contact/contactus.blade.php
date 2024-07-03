@@ -31,8 +31,6 @@
                             <h1>Contact</h1>
                             <h5>{{ Utility::getsettings('contact_text') }}</h5>
                         </div>
-
-
                     </div>
                 </div>
             </div>

@@ -1266,6 +1266,12 @@ template {
     width: 10px;
     height: 10px;
 } */
+
+#testimonials {
+    /* Check for transition or animation properties */
+    background-color: #000 !important;
+}
+
 #testimonials .button,
  #testimonials button:not([data-filter]):not(.mfp-arrow),
  #testimonials input[type="button"], 

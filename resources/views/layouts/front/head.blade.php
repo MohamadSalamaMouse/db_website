@@ -22,8 +22,10 @@
     {{-- <link href="../css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet"> --}}
     {{-- <link href="../css-1?family=Raleway:400,500,600,700&display=swap" rel="stylesheet"> --}}
     <!-- custom styles (optional) -->
-    <link href="{{ asset('assets/front/css/plugins.css') }}?v=<?=time()?>" rel="stylesheet">
-    <link href="{{ asset('assets/front/css/style2.css') }}?v=<?=time()?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="{{ asset('assets/front/css/plugins.css') }}?v=<?= time() ?>" rel="stylesheet">
+    <link href="{{ asset('assets/front/css/style2.css') }}?v=<?= time() ?>" rel="stylesheet">
     @yield('css')
 </head>
 

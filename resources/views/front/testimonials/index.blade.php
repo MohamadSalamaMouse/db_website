@@ -19,7 +19,7 @@
 <!-- Testimonials Section -->
 <section id="testimonials"
     class="section p-5 m-5 section-height-1 section-with-shape-divider position-relative border-0 m-0">
-    <div class="container-fluid mt-2">
+    <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
                 <div class="gradient-custom rounded-3 p-5 m-5 bg-dark">
